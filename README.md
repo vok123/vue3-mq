@@ -49,7 +49,7 @@ app.use(Vue3Mq)
 app.mount('#app');
 ```
 
-### 2.) Using custom breakpoints or breakpoint presets
+### 2.) Plugin Configuration
 
 By default, the plugin will use the `bootstrap5` breakpoints preset. Other presets include:
 
@@ -91,6 +91,16 @@ app.use(Vue3Mq, {
   }
 })
 ```
+
+> **Plugin Configuration Options**
+
+| Name               | Type    | Default      | Description                                                                                     |
+| ------------------ | ------- | ------------ | ----------------------------------------------------------------------------------------------- |
+| preset             | String  | "bootstrap5" | Use breakpoints preset. Options are: bootstrap3, bootstrap4, vuetify, tailwind or devices.      |
+| breakpoints        | Object  | null         | Custom breakpoints config. Object keys and values = breakpoint name and min-width respectively. |
+| defaultBreakpoint  | String  | null         | Screen breakpoint to use before browser window is available (i.e. in SSR)                       |
+| defaultOrientation | String  | null         | Screen orientation to use before browser window is available.                                   |
+| defaultTheme       | String  | null         | OS / browser theme to use before browser window is available.                                   |
 
 ### 3.) Use the `mq` reactive object
 After installing the plugin, you can inject the `mq` object into any component.
@@ -205,17 +215,16 @@ In addition to `mq` reactive object, this plugin provide a wrapper component to 
 
 > **Props**
 
-`target` => optional : [String,Array] - see below
-
-`tag` => optional : String - sets the HTML tag to use for the rendered component (default 'div')
-
-`portrait` => optional : Boolean - only renders in portrait orientation
-
-`landscape` => optional : Boolean - only renders in landscape orientation
-
-`dark` => optional : Boolean - only renders if user prefers dark theme (OS / browser setting)
-
-`light` => optional : Boolean - only renders if user prefers light theme
+| Name      | Type             | Default | Description                                                                   |
+| --------- | ---------------- | ------- | ----------------------------------------------------------------------------- |
+| target    | String \| Array  | null    | Which breakpoints to render the component on (see below for further details). |
+| tag       | String           | "div"   | The HTML tag to use for the rendered component.                               |
+| portrait  | Boolean          | false   | Only render component in portrait orientation.													       |
+| landscape | Boolean          | false   | Only render component in landscape orientation.	                             |
+| dark      | Boolean          | false   | Only render component when user prefers dark mode.	                           |
+| light     | Boolean          | false   | Only render component when user prefers light mode.                           |
+| group     | Boolean          | false   | Render children as part of a Vue Transition Group.                            |
+| list-tag  | String           | "div"   | The HTML tag to use for list items in group mode.                             |
 
 #### **Target prop: no modifier**
 Renders the component only on screens matching your mq value
@@ -250,6 +259,58 @@ Will render the component if the current screen size matches any of the breakpoi
   Display on sm and lg
 </mq-responsive>
 ```
+
+#### **Using named slots in \<mq-responsive\>**
+The use of named slots is another to quickly render one or more items from a list. If you want multiple items to show at once, use the `group` prop on the component. This switches to using a `TransitionGroup` component as a wrapper.
+
+The name of your slot should comprise its render conditions, for example:
+```html
+<mq-responsive>
+  <template #sm>
+    This is a small screen
+  </template>
+  <template #md>
+    This is a medium screen
+  </template>
+  <template #lg>
+    This is a large screen
+  </template>
+</mq-responsive>
+```
+
+You can also combine multiple conditions by separating them with a `:` (colon)
+```html
+<mq-responsive>
+  <template #lg+:dark>
+    This is a large or greater screen which prefers dark mode
+  </template>
+  <template #md:portrait>
+    This is a medium screen in portrait orientation mode
+  </template>
+  <template #xs:dark:portrait>
+    This is an extra small screen that prefers dark mode and portrait orientation
+  </template>
+</mq-responsive>
+```
+
+If you need to use the same options twice, append a number to the end of the slot name:
+```html
+<mq-responsive tag="ul" list-tag="li" group>
+  <template #sm>
+    This is a small screen
+  </template>
+  <template #sm:2>
+    This is also a small screen
+  </template>
+  <template #sm:3>
+    This is yet another small screen
+  </template>
+  <template #md+>
+    This is a medium or larger screen
+  </template>
+</mq-responsive>
+```
+
 
 ## <a id="browser-support">Browser Support</a>
 Since Vue3 will never support Internet Explorer, this browser is not supported.
