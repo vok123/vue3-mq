@@ -17,11 +17,11 @@
         <section class="container py-4">
             <h3 class="text-uppercase c-vue-blue">Now Using Minimum Widths for Breakpoints</h3>
             <p>
-                Customising your breakpoints in version required setting your breakpoints using a key and the
-                <strong>maximum</strong> width (in px) that the screen could be to be counted and that breakpoint. This tended to be be pretty confusing given it required the use of something along the lines of a
+                Customising your breakpoints in version 2 required setting your breakpoints using a key and the
+                <strong>maximum</strong> width (in px) that the screen could be in order to be counted as that breakpoint. This tended to be be pretty confusing given it required the use of something along the lines of a
                 <code
                     class="inline-code"
-                >{ xxl: Infinity }</code> breakpoint. This was also something of an anti-pattern when compared to setting up common CSS frameworks.
+                >{ xxl: Infinity }</code> breakpoint. This was also something of an anti-pattern when compared to setting up common CSS frameworks since it was not "mobile-first".
             </p>
             <p>
                 Version 3 requires using the
@@ -49,7 +49,7 @@
                     Because of the performance and build-size benefits of tree-shaking, the Vue 3 ecosystem is increasingly embracing the practice of using local imports rather than global functions and properties. As such,
                     <code
                         class="inline-code"
-                    >$mq</code> has been removed as a global object and must now be injected into components that require it.
+                    >$mq</code> has been removed as a global property and must now be injected into components that require it.
                 </p>
                 <div class="d-flex flex-column align-items-end" style="min-height: 175px">
                     <CodeExample :code="injectMqCode" alignment="right" />
@@ -197,20 +197,20 @@ const mqResponsiveExample = `<mq-responsive target="md+" tag="div">
     This will render on "md" and above screens
 </mq-responsive>`;
 
-const usingMqResponsiveLocally = `import { mqResponsive } from "vue3-mq";
+const usingMqResponsiveLocally = `import { MqResponsive } from "vue3-mq";
 
 export default {
     components: {
-        mqResponsive
+        MqResponsive
     }   
 }`;
 
 const usingMqResponsiveGlobally = `import { createApp } from "vue";
-import { Vue3Mq, mqResponsive } from "vue3-mq";
+import { Vue3Mq, MqResponsive } from "vue3-mq";
 
 const app = createApp();
 app.use(Vue3Mq);
-app.component('mq-responsive', mqResponsive);
+app.component('mq-responsive', MqResponsive);
 
 app.mount('#app');`;
 

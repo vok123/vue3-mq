@@ -199,6 +199,27 @@
                     <DynamicBreakpointsExample />
                 </div>
             </div>
+            <div class="row mt-5">
+                <div class="col-12 col-xl-6 order-2">
+                    <h3 class="mb-3">Breakpoint Presets</h3>
+                    <p
+                        class="mb-2"
+                    >Choose from a range of presets and get up and running with your favourite UI/CSS framework within seconds.</p>
+                    <p
+                        class="mb-2"
+                    >Options include Bootstrap3, Bootstrap4, Bootstrap5, Vuetify, Tailwind and Devices.</p>
+                    <p class="mb-2">
+                        Change preset at a moment's notice by sending a new preset to the
+                        <span class="code">updateBreakpoints</span> function.
+                    </p>
+                </div>
+                <div
+                    class="col-12 col-xl-6 d-flex flex-column align-items-start mt-4 mt-xl-0 order-1 order-xl-1"
+                    style="min-height: 175px"
+                >
+                    <BreakpointPresetsExample />
+                </div>
+            </div>
         </div>
     </article>
 </template>
@@ -210,6 +231,7 @@ import { useMq, MqResponsive } from "../plugin";
 import MqObjectExample from "../partials/MqObjectExample.vue";
 import HelperComponentExample from "../partials/HelperComponentExample.vue";
 import DynamicBreakpointsExample from "../partials/DynamicBreakpointsExample.vue";
+import BreakpointPresetsExample from "../partials/BreakpointPresetsExample.vue";
 
 import { computed } from "vue";
 

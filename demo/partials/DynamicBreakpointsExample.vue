@@ -8,9 +8,11 @@ const code1 = `export default {
     inject: ["updateBreakpoints"],
     created() {
         this.updateBreakpoints({
-            mobile: 0,
-            tablet: 576,
-            desktop: 1200
+            breakpoints: {
+                mobile: 0,
+                tablet: 576,
+                desktop: 1200
+            }
         })   
     }
 }`;
@@ -19,9 +21,11 @@ setup() {
     const updateBreakpoints = inject("updateBreakpoints");
     onMounted(() => {
         updateBreakpoints({
-            mobile: 0,
-            tablet: 576,
-            desktop: 1200
+            breakpoints: {
+                mobile: 0,
+                tablet: 576,
+                desktop: 1200
+            }
         })
     })
 }`;

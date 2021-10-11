@@ -6,8 +6,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						Vue3-MQ was developed by Craig Riley and is released under an MIT licence. Originally based on a
-						project by Alexandre Bonaventure Geissmann.
+						Vue3-MQ was developed by Craig Riley and is released
+						under an MIT licence. Originally based on a project by
+						Alexandre Bonaventure Geissmann.
 					</div>
 				</div>
 			</div>
