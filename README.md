@@ -121,7 +121,7 @@ export default {
 ```js
 // Composition API
 <script setup>
-import { useMq } from "vue-mq";
+import { useMq } from "vue3-mq";
 
 const mq = useMq();
 </script>
