@@ -1,4 +1,3 @@
-import MqResponsive from "./component";
 import { updateBreakpoints } from "./composables";
 import {
 	setDefaultBreakpoint,

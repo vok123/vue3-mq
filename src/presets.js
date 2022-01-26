@@ -39,7 +39,6 @@ export const tailwind = {
 	xxl: 1536,
 };
 
-// TODO Finalise this preset
 export const devices = {
 	phone: 0,
 	tablet: 768,
