@@ -1,6 +1,6 @@
 {
 	"name": "vue3-mq",
-	"version": "3.0.0",
+	"version": "3.0.2",
 	"description": "Build responsive design into your Vue3 app",
 	"files": [
 		"dist/*"
@@ -32,16 +32,13 @@
 		"build": "vite build -c vite-build.config.js",
 		"test": "jest"
 	},
-	"dependencies": {
-		"@mdi/js": "^5.9.55",
-		"prismjs": "^1.24.1",
-		"vue": "^3.0.5",
-		"vue-router": "^4.0.10",
-		"vue3-icon": "^2.0.0"
+	"peerDependencies": {
+		"vue": "^3.0.5"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.14.8",
 		"@babel/preset-env": "^7.14.8",
+		"@mdi/js": "^6.5.95",
 		"@vitejs/plugin-vue": "^1.2.5",
 		"@vue/compiler-sfc": "^3.0.5",
 		"@vue/test-utils": "^2.0.0-rc.10",
@@ -52,9 +49,12 @@
 		"eslint-plugin-vue": "^7.3.0",
 		"gh-pages": "^3.2.3",
 		"match-media-mock": "^0.1.1",
+		"prismjs": "^1.24.1",
 		"sass": "^1.35.2",
 		"vite": "^2.4.2",
-		"vue-jest": "^5.0.0-alpha.10"
+		"vue-jest": "^5.0.0-alpha.10",
+		"vue-router": "^4.0.10",
+		"vue3-icon": "^2.0.0"
 	},
 	"bugs": {
 		"url": "https://github.com/craigrileyuk/vue3-mq/issues"
