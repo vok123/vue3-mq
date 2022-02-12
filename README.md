@@ -91,6 +91,25 @@ app.use(Vue3Mq, {
   }
 })
 ```
+---
+### SSR: Installing into Nuxt 3
+
+If you haven't already got one, create a plugins folder at the root of your project. Inside this, create a file called `vue3-mq.js`. Then add the following:
+
+```js
+import { defineNuxtPlugin } from "#app";
+import { Vue3Mq } from "vue3-mq";
+
+export default defineNuxtPlugin((nuxtApp) => {
+	nuxtApp.vueApp.use(Vue3Mq, {
+		defaultBreakpoint: "xxl",
+	});
+});
+```
+
+The `defaultBreakpoint` is the size that will be used when rendering your site on the server. This will automatically change based on the client's viewport once the app has hydrated on their browser. You can also set `defaultOrientation` and `defaultTheme` here.
+
+---
 
 > **Plugin Configuration Options**
 
