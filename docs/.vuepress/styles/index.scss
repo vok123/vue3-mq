@@ -1,0 +1,71 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+
+:root {
+	scroll-behavior: smooth;
+}
+
+.full-width {
+	box-sizing: border-box;
+	width: 100vw;
+	max-width: 100vw;
+	margin: 32px calc(50% - 50vw);
+}
+
+.fade-enter-active {
+	transition: all 0.3s ease-out;
+}
+
+.fade-leave-active {
+	transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.small-header {
+	font-size: 1.6rem;
+}
+
+.list-none {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+
+	li {
+		display: flex;
+		align-items: center;
+		margin: 0.6rem 0;
+		line-height: 1.3;
+	}
+
+	.vue3-icon {
+		min-width: 24px;
+	}
+
+	span {
+		margin-left: 2rem;
+	}
+}
+
+.flex {
+	display: flex;
+}
+.justify-end {
+	justify-content: flex-end;
+}
+.items-center {
+	align-items: center;
+}

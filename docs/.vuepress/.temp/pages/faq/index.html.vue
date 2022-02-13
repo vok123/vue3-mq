@@ -1,0 +1,11 @@
+<template><h1 id="frequently-asked-questions" tabindex="-1"><a class="header-anchor" href="#frequently-asked-questions" aria-hidden="true">#</a> Frequently Asked Questions</h1>
+<h2 id="does-this-package-support-vue-2" tabindex="-1"><a class="header-anchor" href="#does-this-package-support-vue-2" aria-hidden="true">#</a> Does this package support Vue 2?</h2>
+<p>No, and it never will. Vue3-Mq was based on the excellent <a href="https://github.com/AlexandreBonaventure/vue-mq" target="_blank" rel="noopener noreferrer">Vue-Mq<ExternalLinkIcon/></a> project by <a href="https://alexandrebonaventure.github.io/vue-mq" target="_blank" rel="noopener noreferrer">Alexandre Bonaventure<ExternalLinkIcon/></a>, who's got your Vue 2 needs covered.</p>
+<h2 id="any-plans-for-typescript-support" tabindex="-1"><a class="header-anchor" href="#any-plans-for-typescript-support" aria-hidden="true">#</a> Any plans for Typescript support?</h2>
+<p>I don't currently work with Typescript (it's on the to-do list, or maybe the to-do list is in Typescript). But if anyone feels compelled to add them, I'll happily accept a pull request on the project's <a href="https://github.com/craigrileyuk/vue3-mq" target="_blank" rel="noopener noreferrer">Github<ExternalLinkIcon/></a> page.</p>
+<h2 id="what-can-i-use-for-my-breakpoint-keys" tabindex="-1"><a class="header-anchor" href="#what-can-i-use-for-my-breakpoint-keys" aria-hidden="true">#</a> What can I use for my breakpoint keys?</h2>
+<p>Breakpoint keys must start with a letter and contain only alphanumeric characters and underscores <code>[a-zA-Z0-9_]</code>. No hyphens are allowed since these are used to denote breakpoint ranges.</p>
+<h2 id="i-m-getting-a-hydration-warning-on-ssr" tabindex="-1"><a class="header-anchor" href="#i-m-getting-a-hydration-warning-on-ssr" aria-hidden="true">#</a> I'm getting a hydration warning on SSR...</h2>
+<p>It's a known issue when the provided <code>defaultBreakpoint</code> differs from the actual breakpoint on the client's device. At the moment, the only workaround is to wait until the app is mounted before initiating the changeover. However, this would result in a flash alternate content and it only really does what Vue's internal engine handles automatically.</p>
+<p>Awaiting a better solution, if one can be found.</p>
+</template>

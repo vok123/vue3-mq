@@ -1,0 +1,12 @@
+<template><h1 id="server-side-rendering" tabindex="-1"><a class="header-anchor" href="#server-side-rendering" aria-hidden="true">#</a> Server Side Rendering</h1>
+<h2 id="nuxt-3" tabindex="-1"><a class="header-anchor" href="#nuxt-3" aria-hidden="true">#</a> Nuxt 3</h2>
+<p>If you haven't already got one, create a <code>plugins</code> folder in the root of your project, then create a file called <code>vue3-mq.js</code>.</p>
+<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> defineNuxtPlugin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"#app"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Vue3Mq <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"vue3-mq"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineNuxtPlugin</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">nuxtApp</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+	nuxtApp<span class="token punctuation">.</span>vueApp<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vue3Mq<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">defaultBreakpoint</span><span class="token operator">:</span> <span class="token string">"xxl"</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></template>

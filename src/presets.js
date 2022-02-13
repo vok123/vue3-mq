@@ -45,3 +45,13 @@ export const devices = {
 	laptop: 1370,
 	desktop: 1906,
 };
+
+export const wordpress = {
+	mobile: 0,
+	small: 600,
+	medium: 782,
+	large: 960,
+	xlarge: 1080,
+	wide: 1280,
+	huge: 1440,
+};
