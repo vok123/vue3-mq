@@ -27,3 +27,11 @@ Check out the documentation at https://vue3-mq.info.
 ## License
 
 [MIT](https://github.com/craigrileyuk/vue3-mq/blob/main/LICENSE)
+
+## Bugs / Support
+
+Please [open an issue](https://github.com/craigrileyuk/vue3-mq/issues/new) for support.
+
+## Thanks
+
+Thanks to [Alexandre Bonaventure](https://github.com/AlexandreBonaventure/vue-mq) for creating the Vue 2 project that this is based upon.
