@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
- <img src="https://img.shields.io/npm/dm/vue3-mq.svg" alt="Downloads"></a>
+  <img src="https://img.shields.io/npm/dm/vue3-mq.svg" alt="Downloads"></a>
   <a href="https://www.npmjs.com/package/vue3-mq"><img src="https://img.shields.io/npm/v/vue3-mq.svg" alt="Version"></a>
   <a href="https://github.com/craigrileyuk/vue3-mq/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/vue3-mq.svg" alt="License"></a>
 </p>
@@ -27,6 +27,21 @@ Check out the documentation at https://vue3-mq.info.
 ## License
 
 [MIT](https://github.com/craigrileyuk/vue3-mq/blob/main/LICENSE)
+
+## Sponsor / Donate
+
+Finding this package useful? Then help keep the coffee flowing.
+
+[Sponsor Craig Riley on Github](https://github.com/sponsors/craigrileyuk/)
+
+## Other Packages by the Author
+
+- [Tailwind Fluid Typography](https://github.com/craigrileyuk/tailwind-fluid-typography)
+- [Laravel Mix Ziggy Watch](https://github.com/craigrileyuk/laravel-mix-ziggy-watch)
+- [Vue 3 Snackbar](https://github.com/craigrileyuk/vue3-snackbar)
+- [Vue 3 Slide Up Down](https://github.com/craigrileyuk/vue3-slide-up-down)
+- [Vue 3 Icon](https://github.com/craigrileyuk/vue3-icon)
+
 
 ## Bugs / Support
 

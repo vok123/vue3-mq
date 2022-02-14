@@ -6,3 +6,8 @@ dist-ssr
 demo/scss
 *.tgz
 *.zip
+
+# VuePress files
+docs/.vuepress/.temp/
+docs/.vuepress/.cache/
+docs/.vuepress/dist/
