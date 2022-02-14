@@ -17,6 +17,6 @@ export default defineNuxtPlugin((nuxtApp) => {
 
 Nuxt will then autoload the plugin and allow you to import the MQ object or component within your pages as shown throughout the documentation. 
 
-::: warn
+::: warning 
 This does not register any global functions or objects on your app. You must `import { useMq } from "vue3-mq"` (Composition API) or `inject: ["mq"]` (Options API) or likewise import the component as shown in the usage instructions.
 :::
