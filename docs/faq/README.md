@@ -14,6 +14,6 @@ Breakpoint keys must start with a letter and contain only alphanumeric character
 
 ## I'm getting a hydration warning on SSR...
 
-It's a known issue when the provided `defaultBreakpoint` differs from the actual breakpoint on the client's device. At the moment, the only workaround is to wait until the app is mounted before initiating the changeover. However, this would result in a flash alternate content and it only really does what Vue's internal engine handles automatically.
+It's a known issue when the provided `defaultBreakpoint` differs from the actual breakpoint on the client's device. At the moment, the only workaround is to wait until the app is mounted before initiating the changeover. However, this would result in a flash of alternate content and it only really does what Vue's internal engine handles automatically.
 
 Awaiting a better solution, if one can be found.
