@@ -12,6 +12,10 @@ module.exports = [
 				text: "Version 3",
 				children: [
 					{
+						text: "v3.1.0",
+						link: "/changelog/v3.1.0",
+					},
+					{
 						text: "v3.0.3",
 						link: "/changelog/v3.0.3",
 					},
