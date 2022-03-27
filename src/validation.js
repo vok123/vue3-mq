@@ -33,6 +33,16 @@ export const validateTheme = (theme = null) => {
 	} else return theme;
 };
 
+export const validateMotion = (motion = null) => {
+	const isValid = ["no-preference", "reduce"].includes(motion);
+	if (isValid === false && motion !== null) {
+		console.error(
+			`Vue3 Mq: "${motion}" is not a valid default motion preference. Reverting to unset value.`
+		);
+		return null;
+	} else return motion;
+};
+
 export const sanitiseBreakpoints = (breakpoints) => {
 	if (!breakpoints || typeof breakpoints !== "object") return false;
 	const sanitisedBreakpoints = [];
@@ -98,6 +108,9 @@ export const extractSlotNameProperties = (name) => {
 		// If it's a theme, apply
 		else if (["light", "dark"].includes(option))
 			optionsObject.slotTheme = option;
+		// If it's a motion preference, apply
+		else if (["inert", "motion"].includes(option))
+			optionsObject.slotMotion = option;
 		// Otherwise, assume it's a breakpoint
 		else optionsObject.slotBp = option;
 	}

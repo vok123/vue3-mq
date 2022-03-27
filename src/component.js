@@ -4,6 +4,7 @@ import {
 	calculateBreakpointsToRender,
 	calculateOrientationsToRender,
 	calculateThemesToRender,
+	calculateMotionToRender,
 } from "./helpers";
 import { extractSlotNameProperties } from "./validation";
 
@@ -48,6 +49,20 @@ export default {
 			default: false,
 		},
 		/**
+		 * Only render when reduced motion is preferred
+		 */
+		inert: {
+			type: Boolean,
+			default: false,
+		},
+		/**
+		 * Only render when normal motion is preferred
+		 */
+		motion: {
+			type: Boolean,
+			default: false,
+		},
+		/**
 		 * HTML tag to use when rendering
 		 */
 		tag: {
@@ -85,11 +100,15 @@ export default {
 		const themesToRender = computed(() => {
 			return calculateThemesToRender(props.dark, props.light);
 		});
+		const motionToRender = computed(() => {
+			return calculateMotionToRender(props.inert, props.motion);
+		});
 		const shouldRenderDefault = computed(() => {
 			return (
 				breakpointsToRender.value.includes(mqState.current) &&
 				orientationsToRender.value.includes(mqState.orientation) &&
-				themesToRender.value.includes(mqState.theme)
+				themesToRender.value.includes(mqState.theme) &&
+				motionToRender.value.includes(mqState.motionPreference)
 			);
 		});
 		const renderSlots = (tag) => {
@@ -99,7 +118,7 @@ export default {
 			const slotsToRender = [];
 			for (let slot in slots) {
 				// Extract render options from slot name.
-				const { slotBp, slotOrientation, slotTheme } =
+				const { slotBp, slotOrientation, slotTheme, slotMotion } =
 					extractSlotNameProperties(slot);
 				// Compute an array of breakpoints in which the slot should render
 				const breakpointsToRenderSlot = computed(() => {
@@ -125,6 +144,14 @@ export default {
 					);
 				});
 
+				// Compute an array of motion preference under which the slot should render
+				const motionToRenderSlot = computed(() => {
+					return calculateMotionToRender(
+						slotMotion === "inert",
+						slotMotion === "motion"
+					);
+				});
+
 				// Compute if this slot should be rendered
 				const shouldRenderSlot = computed(() => {
 					return (
@@ -134,7 +161,10 @@ export default {
 						orientationsToRenderSlot.value.includes(
 							mqState.orientation
 						) &&
-						themesToRenderSlot.value.includes(mqState.theme)
+						themesToRenderSlot.value.includes(mqState.theme) &&
+						motionToRenderSlot.value.includes(
+							mqState.motionPreference
+						)
 					);
 				});
 

@@ -117,6 +117,38 @@ This prop accepts a Boolean
 </template>
 ```
 
+## Inert
+
+Uses the OS/browser-provided `prefers-reduced-motion` media query to render only when reduced motion is preferred.
+
+::: tip
+This prop accepts a Boolean
+:::
+
+```vue
+<template>
+    <MqResponsive inert>
+        <div>This user prefers reduced motion</div>
+    </MqResponsive>
+</template>
+```
+
+## Motion
+
+Uses the OS/browser-provided `prefers-reduced-motion` media query to render only when no motion preference is stated.
+
+::: tip
+This prop accepts a Boolean
+:::
+
+```vue
+<template>
+    <MqResponsive motion>
+        <div>This user has no motion preference</div>
+    </MqResponsive>
+</template>
+```
+
 ## Tag
 
 Sets the HTML tag to be used to wrap the contained content

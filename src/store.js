@@ -10,6 +10,7 @@ const _availableBreakpoints = ref([]);
 const _defaultBreakpoint = ref(null);
 const _defaultOrientation = ref(null);
 const _defaultTheme = ref(null);
+const _defaultMotion = ref(null);
 const _mqState = reactive({
 	current: "",
 });
@@ -24,6 +25,7 @@ export const availableBreakpoints = readonly(_availableBreakpoints);
 export const defaultBreakpoint = readonly(_defaultBreakpoint);
 export const defaultOrientation = readonly(_defaultOrientation);
 export const defaultTheme = readonly(_defaultTheme);
+export const defaultMotion = readonly(_defaultMotion);
 export const mqState = readonly(_mqState);
 
 /* ******************************************
@@ -55,6 +57,14 @@ export const setDefaultOrientation = (v) => {
  */
 export const setDefaultTheme = (v) => {
 	_defaultTheme.value = v;
+};
+
+/**
+ * @constant
+ * @type {Function} - Sets the motion preference to use when plugin executes in a non-browser context
+ */
+export const setDefaultMotion = (v) => {
+	_defaultMotion.value = v;
 };
 
 export const updateState = (v = defaultBreakpoint.value) => {
@@ -90,6 +100,7 @@ export const resetState = () => {
 	updateState();
 	updateOrientationState();
 	updateThemeState();
+	updateMotionState();
 };
 
 /**
@@ -112,4 +123,17 @@ export const updateThemeState = (v = defaultTheme.value || "light") => {
 	_mqState.theme = v;
 	_mqState.isDark = v === "dark";
 	_mqState.isLight = v === "light";
+};
+
+/**
+ * @constant
+ * @type {Function} - Update values for the MQ object's motion perferences
+ * @param {string} v - The motion preference value to set, either "reduced" or "no-preference".
+ */
+export const updateMotionState = (
+	v = defaultMotion.value || "no-preference"
+) => {
+	_mqState.motionPreference = v;
+	_mqState.isMotion = v === "no-preference";
+	_mqState.isInert = v === "reduce";
 };

@@ -18,6 +18,8 @@ Slot names are created dynamically based upon your provided breakpoints.
         <template #xl>This list element will render on x-large screens with an 'li' tag</template>
         <template #dark>This list element will render when dark mode is preferred</template>
         <template #light>This list element will render when light mode is preferred</template>
+        <template #inert>This list element will render when reduced motion is preferred</template>
+        <template #motion>This list element will render when no motion preference is given</template>
         <template #portrait>This list element will render when in portrait mode</template>
         <template #landscape>This list element will render when in light mode</template>
     </MqResponsive>

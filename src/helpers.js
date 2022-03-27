@@ -185,3 +185,17 @@ export const calculateThemesToRender = (dark, light) => {
 	if (dark) arr.push("dark");
 	return arr;
 };
+
+/**
+ * @constant {Function} calculateMotionToRender - Creates an array of the motion preferences that should be rendered on
+ * @param {boolean} inert - Render only in reduced motion mode
+ * @param {boolean} motion - Render only in normal motion mode
+ * @returns {string[]} - The array of motion preferences to render on based upon the current value
+ */
+export const calculateMotionToRender = (inert, motion) => {
+	const arr = [];
+	if (!inert && !motion) return ["reduce", "no-preference"];
+	if (inert) arr.push("reduce");
+	if (motion) arr.push("no-preference");
+	return arr;
+};

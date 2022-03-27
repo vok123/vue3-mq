@@ -19,6 +19,7 @@ import {
 import {
 	setAvailableBreakpoints,
 	updateState,
+	updateMotionState,
 	updateOrientationState,
 	updateThemeState,
 	resetState,
@@ -77,6 +78,15 @@ export function updateBreakpoints({ breakpoints, preset }) {
 		};
 
 		subscribeToMediaQuery(`(prefers-color-scheme: ${t})`, themeCallback);
+	});
+
+	// Set matchMedia queries for OS theme
+	["reduce", "no-preference"].forEach((m) => {
+		const motionCallback = () => {
+			updateMotionState(m);
+		};
+
+		subscribeToMediaQuery(`(prefers-reduced-motion: ${m})`, motionCallback);
 	});
 }
 
