@@ -4,6 +4,7 @@ import {
 	calculateBreakpointsToRender,
 	calculateOrientationsToRender,
 	calculateThemesToRender,
+	calculateMotionToRender,
 } from "../../src/helpers";
 import { sanitiseBreakpoints } from "../../src/validation";
 import { bootstrap5 } from "../../src/presets";
@@ -120,5 +121,32 @@ describe("helpers.js", () => {
 		const themesToRender = calculateThemesToRender(true, false);
 		const expected = ["dark"];
 		expect(themesToRender).toEqual(expect.arrayContaining(expected));
+	});
+
+	/* ******************************************
+	 * MOTION
+	 ****************************************** */
+	it("returns all motion preferences when none specified", () => {
+		const motionToRender = calculateMotionToRender();
+		const expected = ["reduce", "no-preference"];
+		expect(motionToRender).toEqual(expect.arrayContaining(expected));
+	});
+
+	it("returns both motion preferences when both specified", () => {
+		const motionToRender = calculateMotionToRender(true, true);
+		const expected = ["reduce", "no-preference"];
+		expect(motionToRender).toEqual(expect.arrayContaining(expected));
+	});
+
+	it("returns inert correctly", () => {
+		const motionToRender = calculateMotionToRender(true, false);
+		const expected = ["reduce"];
+		expect(motionToRender).toEqual(expect.arrayContaining(expected));
+	});
+
+	it("returns motion correctly", () => {
+		const motionToRender = calculateMotionToRender(false, true);
+		const expected = ["no-preference"];
+		expect(motionToRender).toEqual(expect.arrayContaining(expected));
 	});
 });

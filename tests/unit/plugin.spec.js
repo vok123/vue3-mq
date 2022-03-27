@@ -200,6 +200,8 @@ describe("plugin.js", () => {
 				portrait: "This is portrait",
 				light: "This is light",
 				dark: "This is dark",
+				inert: "This is reduced motion",
+				motion: "This is no motion preference",
 				"md:landscape:dark": "This is md:landscape:dark",
 				"md:portrait:dark": "This is md:portrait:dark",
 			},
@@ -221,6 +223,10 @@ describe("plugin.js", () => {
 		expect(wrapper.html()).not.toContain("<li>This is portrait</li>");
 		expect(wrapper.html()).not.toContain("<li>This is light</li>");
 		expect(wrapper.html()).toContain("<li>This is dark</li>");
+		expect(wrapper.html()).not.toContain("<li>This is reduced motion</li>");
+		expect(wrapper.html()).toContain(
+			"<li>This is no motion preference</li>"
+		);
 		expect(wrapper.html()).toContain("<li>This is md:landscape:dark</li>");
 		expect(wrapper.html()).not.toContain(
 			"<li>This is md:portrait:dark</li>"

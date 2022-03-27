@@ -52,6 +52,18 @@ describe("validation.js", () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
+	it("should validate a correct default motion preference", () => {
+		const validatedMotion = validation.validateMotion("reduce");
+		expect(validatedMotion).toEqual("reduce");
+		expect(spy).not.toHaveBeenCalled();
+	});
+
+	it("should fail to validate an incorrect default motion preference", () => {
+		const validatedMotion = validation.validateMotion("rollercoaster");
+		expect(validatedMotion).toBeNull();
+		expect(spy).toHaveBeenCalled();
+	});
+
 	it("sanitises a valid set of breakpoints", () => {
 		const sanitisedBreakpoints = validation.sanitiseBreakpoints(
 			presets.tailwind
@@ -112,11 +124,12 @@ describe("validation.js", () => {
 
 	it("can extract slot names properly", () => {
 		const slotOptions = validation.extractSlotNameProperties(
-			"sm-lg:dark:portrait:2"
+			"sm-lg:dark:inert:portrait:2"
 		);
 
 		expect(slotOptions).toHaveProperty("slotBp", "sm-lg");
 		expect(slotOptions).toHaveProperty("slotTheme", "dark");
 		expect(slotOptions).toHaveProperty("slotOrientation", "portrait");
+		expect(slotOptions).toHaveProperty("slotMotion", "inert");
 	});
 });

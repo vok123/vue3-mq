@@ -17,6 +17,7 @@ Bring fully reactive, responsive design to your Vue 3 project with Vue3-MQ, a pl
 - Access a fully reactive environment analysis object
 - Adapt to your users' preference for light or dark themes
 - React to changes in screen orientation
+- Respect user preference for reduced motion direct in your Vue files
 - Choose from a range of breakpoint presets, including Bootstrap 4, Bootstrap 5, Vuetify or Tailwind
 - Render on single breakpoints, arrays of breakpoints or ranges
 
