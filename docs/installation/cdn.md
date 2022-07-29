@@ -17,7 +17,7 @@ You can add Vue3-MQ to your project using any of the available public open-sourc
     <script src="https://unpkg.com/vue@3"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue3-mq@latest"></script>
     <script>
-        const { MqResponsive, Vue3Mq: Vue3MqPlugin } = Vue3Mq;
+        const { MqResponsive, VitalMq: Vue3MqPlugin } = VitalMq;
         const app = Vue.createApp({
             inject: ["mq"]
         });

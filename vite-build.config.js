@@ -1,13 +1,24 @@
 import vue from "@vitejs/plugin-vue";
 import path from "path";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default {
-	plugins: [vue()],
+	plugins: [
+		vue(),
+		viteStaticCopy({
+			targets: [
+				{
+					src: "src/vital-mq.d.ts",
+					dest: "",
+				},
+			],
+		}),
+	],
 	build: {
 		lib: {
 			entry: path.resolve(__dirname, "src/index.js"),
-			name: "Vue3Mq",
-			formats: ["es", "umd", "cjs", "iife"],
+			name: "VitalMq",
+			formats: ["es", "umd", "cjs"],
 		},
 		rollupOptions: {
 			external: ["vue"],

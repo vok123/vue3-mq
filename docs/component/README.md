@@ -7,7 +7,7 @@ For convenience, an `<MqResponsive>` component is available for use in your app.
   
 ```vue
 <script setup>
-import { MqResponsive } from "vue3-mq";
+import { MqResponsive } from "vital-mq";
 </script>
 ```
 
@@ -18,7 +18,7 @@ import { MqResponsive } from "vue3-mq";
 
 ```vue
 <script>
-import { MqResponsive } from "vue3-mq";
+import { MqResponsive } from "vital-mq";
 
 export default {
     components: {

@@ -10,7 +10,7 @@ Simply import or inject the provided function and pass your new configuration ob
 ```vue
 <script setup>
 import { onMounted } from "vue";
-import { updateBreakpoints } from "vue3-mq";
+import { updateBreakpoints } from "vital-mq";
 
 onMounted(() => {
     updateBreakpoints({

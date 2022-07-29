@@ -6,7 +6,7 @@ title: Configuring the Plugin
 When installing Vue3-Mq, you can pass a config object with any of the options below:
 
 ```js
-app.use(Vue3Mq, {
+app.use(VitalMq, {
     // config options here
 })
 ```

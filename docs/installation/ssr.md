@@ -6,10 +6,10 @@ If you haven't already got one, create a `plugins` folder in the root of your pr
 
 ```js
 import { defineNuxtPlugin } from "#app";
-import { Vue3Mq } from "vue3-mq";
+import { VitalMq } from "vue3-mq";
 
 export default defineNuxtPlugin((nuxtApp) => {
-	nuxtApp.vueApp.use(Vue3Mq, {
+	nuxtApp.vueApp.use(VitalMq, {
 		defaultBreakpoint: "xxl",
 	});
 });

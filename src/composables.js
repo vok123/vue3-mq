@@ -97,10 +97,33 @@ export function updateBreakpoints({ breakpoints, preset }) {
  * @returns {reactive} - The Vue Reactive object
  */
 export function useMq() {
-	const mq = inject("mq");
-	if (!mq) {
-		throw new Error(
-			"Vue3Mq is not installed in this app. Please follow the installation instructions and try again."
-		);
-	} else return mq;
+	const mq = inject("mq", null);
+	return (
+		mq || reactive({
+			current: "xl",
+			xs: false,
+			smMinus: false,
+			smPlus: true,
+			sm: false,
+			mdMinus: false,
+			mdPlus: true,
+			md: false,
+			lgMinus: false,
+			lgPlus: true,
+			lg: false,
+			xlMinus: false,
+			xlPlus: true,
+			xl: false,
+			xxl: true,
+			orientation: "landscape",
+			isLandscape: true,
+			isPortrait: false,
+			theme: "light",
+			isDark: false,
+			isLight: true,
+			motionPreference: "no-preference",
+			isMotion: true,
+			isInert: false,
+		}
+	));
 }

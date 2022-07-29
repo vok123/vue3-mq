@@ -13,7 +13,7 @@ import {
 } from "./validation";
 
 /**
- * Install the Vue3Mq plugin on the Vue app instance
+ * Install the VitalMq plugin on the Vue app instance
  *
  * @param {object} app - The Vue3 app instance
  * @param {object} config - Plugin installation configuration object
@@ -24,7 +24,7 @@ import {
  * @param {string} config.defaultMotion - The motion preference to set when the plugin is executed in a non-browser context (e.g. SSR)
  * @param {string} config.defaultTheme - The theme to set when the plugin is executed in a non-browser context (e.g. SSR) or for users with no OS preference
  */
-const install = (
+export const install = (
 	app,
 	{
 		preset = "bootstrap5",
@@ -55,6 +55,4 @@ const install = (
 	}
 };
 
-export default {
-	install,
-};
+export default { install };

@@ -1,12 +1,13 @@
 {
-	"name": "vue3-mq",
-	"version": "3.1.0",
+	"name": "vital-mq",
+	"version": "1.1.0",
 	"description": "Build responsive design into your Vue3 app",
 	"files": [
 		"dist/*"
 	],
-	"main": "./dist/vue3-mq.umd.js",
-	"module": "./dist/vue3-mq.es.js",
+	"main": "./dist/vital-mq.umd.js",
+	"module": "./dist/vital-mq.js",
+	"types": "dist/vital-mq.d.ts",
 	"browserslist": [
 		"> 1%",
 		"last 2 versions",
@@ -39,7 +40,7 @@
 		"@babel/core": "^7.14.8",
 		"@babel/preset-env": "^7.14.8",
 		"@mdi/js": "^6.5.95",
-		"@vitejs/plugin-vue": "^2.2.0",
+		"@vitejs/plugin-vue": "^3.0.0",
 		"@vue/compiler-sfc": "^3.0.5",
 		"@vue/test-utils": "^2.0.0-rc.10",
 		"@vuepress/plugin-back-to-top": "^2.0.0-beta.35",
@@ -58,7 +59,8 @@
 		"postcss": "^8.4.12",
 		"sass": "^1.35.2",
 		"tailwindcss": "^3.0.23",
-		"vite": "^2.4.2",
+		"vite": "^3.0.0",
+		"vite-plugin-static-copy": "^0.7.0",
 		"vue-jest": "^5.0.0-alpha.10",
 		"vue3-icon": "^2.0.0",
 		"vuepress": "^2.0.0-beta.35"

@@ -5,7 +5,7 @@ Under the `preset` option, you can pass any of the following:
 ## Bootstrap 5 (default)
 
 ```js
-app.use(Vue3Mq, {
+app.use(VitalMq, {
     preset: 'bootstrap5'
 })
 ```
@@ -22,7 +22,7 @@ app.use(Vue3Mq, {
 ## Bootstrap 4
 
 ```js
-app.use(Vue3Mq, {
+app.use(VitalMq, {
     preset: 'bootstrap4'
 })
 ```
@@ -38,7 +38,7 @@ app.use(Vue3Mq, {
 ## Bootstrap 3
 
 ```js
-app.use(Vue3Mq, {
+app.use(VitalMq, {
     preset: 'bootstrap3'
 })
 ```
@@ -53,7 +53,7 @@ app.use(Vue3Mq, {
 ## Vuetify
 
 ```js
-app.use(Vue3Mq, {
+app.use(VitalMq, {
     preset: 'vuetify'
 })
 ```
@@ -69,7 +69,7 @@ app.use(Vue3Mq, {
 ## Tailwind
 
 ```js
-app.use(Vue3Mq, {
+app.use(VitalMq, {
     preset: 'tailwind'
 })
 ```
@@ -86,7 +86,7 @@ app.use(Vue3Mq, {
 ## Devices
 
 ```js
-app.use(Vue3Mq, {
+app.use(VitalMq, {
     preset: 'devices'
 })
 ```
@@ -101,7 +101,7 @@ app.use(Vue3Mq, {
 ## Wordpress
 
 ```js
-app.use(Vue3Mq, {
+app.use(VitalMq, {
     preset: 'wordpress'
 })
 ```

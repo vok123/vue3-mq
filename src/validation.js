@@ -79,7 +79,7 @@ export const sanitiseBreakpoints = (breakpoints) => {
 	);
 	if (!hasZero) {
 		console.warn(
-			`Vue3 Mq: You have not declared a breakpoint with a minimum value of 0. There may be screen sizes to which Vue3Mq does not respond.`
+			`Vue3 Mq: You have not declared a breakpoint with a minimum value of 0. There may be screen sizes to which VitalMq does not respond.`
 		);
 	}
 

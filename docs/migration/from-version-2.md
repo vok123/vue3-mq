@@ -10,10 +10,10 @@ There is no longer a default export from the vue3-mq package. All exports are no
 
 ```js
 import { createApp } from "vue";
-import { Vue3Mq } from "vue3-mq";
+import { VitalMq } from "vue3-mq";
 
 const app = createApp();
-app.use(Vue3Mq);
+app.use(VitalMq);
 
 app.mount('#app');
 ```
@@ -25,7 +25,7 @@ Customising your breakpoints in version 2 required setting your breakpoints usin
 Version 3 requires using the **minimum** width you want a breakpoint to become active on. For example, a custom setup might go like so: 
 
 ```js
-app.use(Vue3Mq, {
+app.use(VitalMq, {
     breakpoints: {
         xs: 0,
         sm: 600,
@@ -151,10 +151,10 @@ export default {
 
 ```js
 import { createApp } from "vue";
-import { Vue3Mq, MqResponsive } from "vue3-mq";
+import { VitalMq, MqResponsive } from "vue3-mq";
 
 const app = createApp();
-app.use(Vue3Mq);
+app.use(VitalMq);
 app.component('mq-responsive', MqResponsive);
 
 app.mount('#app');

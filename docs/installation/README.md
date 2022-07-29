@@ -27,8 +27,8 @@ Now add the plugin to your app entry file
 
 ```js
 import { createApp } from "vue";
-import { Vue3Mq } from "vue3-mq";
+import { VitalMq } from "vue3-mq";
 const app = createApp({});
-app.use(Vue3Mq);
+app.use(VitalMq);
 app.mount("#app");
 ```
